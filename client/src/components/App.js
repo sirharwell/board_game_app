@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import NavBar from './NavBar';
 import Login from './Login';
+import Games from './Games';
 import Register from './Register';
 import Flash from './Flash';
 import Home from './Home';
@@ -19,6 +20,7 @@ class App extends Component {
         <FetchUser>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/games' component={Games} />
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
             <Route component={NoMatch} />
