@@ -25,9 +25,9 @@ class Games extends React.Component {
     })
   }
 
-  hasImage = (brewery) => {
-    if (brewery.hasOwnProperty('images') === true) {
-      return <Item.Image src={brewery.images.medium} />;
+  hasImage = (game) => {
+    if (game.hasOwnProperty('images') === true) {
+      return <Item.Image src={game.images.medium} />;
     } else {
       return (
         <Item.Image src="https://www.landmarkbangkok.com/images/dining/Huntsman-1.jpg"
@@ -39,19 +39,19 @@ class Games extends React.Component {
 
   listGames = () => {
      const { breweries } = this.state;
-     return breweries.map((brewery) => (
+     return breweries.map((game) => (
        <Segment inverted>
          <Item.Group>
           <Item>
-            {this.hasImage(brewery)}
+            {this.hasImage(game)}
             <Item.Content>
-              <Item.Header style={styles.header}>{brewery.name}</Item.Header>
+              <Item.Header style={styles.header}>{game.name}</Item.Header>
               <Item.Meta style={styles.header}>Description</Item.Meta>
               <Item.Description style={styles.header}>
-                {brewery.description}
+                {game.description}
               </Item.Description>
               <Item.Extra style={styles.header}>Additional Details</Item.Extra>
-                {brewery.website}
+                {game.website}
             </Item.Content>
           </Item>
         </Item.Group>
